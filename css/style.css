@@ -109,24 +109,6 @@ html, body {
   margin-top: 10px;
 }
 
-.btn-test {
-  font-size: 13px;
-  padding: 8px 20px;
-  background: transparent;
-  border: 1px dashed #666;
-  color: #888;
-  box-shadow: none;
-  margin-top: 4px;
-}
-.btn-test:hover {
-  border-color: #ffd700;
-  color: #ffd700;
-}
-.btn-test:active {
-  transform: scale(0.96);
-  box-shadow: none;
-}
-
 .hint-text {
   font-size: 14px;
   color: #888;

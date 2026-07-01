@@ -36,7 +36,6 @@ class Game {
   init() {
     // Button listeners
     document.getElementById('startBtn').addEventListener('click', () => this.startGame());
-    document.getElementById('testG7Btn').addEventListener('click', () => this.jumpToG7());
     document.getElementById('tryAgainBtn').addEventListener('click', () => this.tryAgain());
     document.getElementById('endGameBtn').addEventListener('click', () => this.endGame());
     document.getElementById('victoryEndBtn').addEventListener('click', () => this.endGame());
@@ -163,29 +162,6 @@ class Game {
     document.getElementById('victoryModal').classList.add('hidden');
 
     this.loadMaze('A', 1);
-  }
-
-  jumpToG7() {
-    this.gameState = 'playing';
-    this.paused = false;
-    this.lives = 3;
-    this.totalCoins = 0;
-    this.world = {};
-    this.visitedMazes = new Set();
-    this.playerDirection = null;
-    this.pressedDirections = new Set();
-    this.playerMoveTimer = 0;
-    this.guardMoveTimer = 0;
-    this.captureCooldown = 0;
-    this.enteringMaze = false;
-    this.entryAnim = null;
-
-    document.getElementById('startScreen').classList.remove('active');
-    document.getElementById('gameScreen').classList.add('active');
-    document.getElementById('gameOverModal').classList.add('hidden');
-    document.getElementById('victoryModal').classList.add('hidden');
-
-    this.loadMaze('G', 7);
   }
 
   loadMaze(col, row) {
