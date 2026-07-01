@@ -1,0 +1,12 @@
+# WorkBuddy internal
+.workbuddy/
+.codebuddy/
+
+# Debug/test files
+debug-*.png
+test-*.png
+test-*.js
+
+# OS files
+.DS_Store
+node_modules/

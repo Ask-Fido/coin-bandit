@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Coin Bandit - 金币大盗贼</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Start Screen -->
+  <div id="startScreen" class="screen active">
+    <div class="start-container">
+      <div class="title-box">
+        <h1 class="game-title-en">Coin Bandit</h1>
+        <h2 class="game-title-cn">金币大盗贼</h2>
+      </div>
+      <img src="assets/start-image.png" alt="Coin Bandit" class="start-image">
+      <button id="startBtn" class="btn btn-start">开始游戏</button>
+      <button id="testG7Btn" class="btn btn-test">⚡ 测试 G7 终局</button>
+      <p class="hint-text">方向键移动 / 空格键暂停</p>
+    </div>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="gameScreen" class="screen">
+    <div class="game-wrapper">
+      <div class="hud-bar">
+        <div class="hud-item">
+          <span class="hud-icon">🪙</span>
+          <span class="hud-label">金币</span>
+          <span id="coinCount" class="hud-value">0</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-icon">❤️</span>
+          <span class="hud-label">生命</span>
+          <span id="lifeCount" class="hud-value">3</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-icon">🗺️</span>
+          <span class="hud-label">位置</span>
+          <span id="mazeLocation" class="hud-value">A1</span>
+        </div>
+      </div>
+      <div class="canvas-wrapper">
+        <canvas id="gameCanvas"></canvas>
+      </div>
+      <div class="dpad">
+        <button class="dpad-btn dpad-up" data-dir="up">▲</button>
+        <button class="dpad-btn dpad-left" data-dir="left">◀</button>
+        <button class="dpad-btn dpad-right" data-dir="right">▶</button>
+        <button class="dpad-btn dpad-down" data-dir="down">▼</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Over Modal -->
+  <div id="gameOverModal" class="modal hidden">
+    <div class="modal-content">
+      <h1 class="modal-title">游戏结束</h1>
+      <p class="modal-text">金币收集: <span id="finalScore">0</span></p>
+      <p class="modal-text">到达迷宫: <span id="finalMaze">A1</span></p>
+      <div class="modal-buttons">
+        <button id="tryAgainBtn" class="btn btn-primary">再来一次</button>
+        <button id="endGameBtn" class="btn btn-secondary">结束游戏</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Respawn Message -->
+  <div id="respawnMessage" class="toast hidden">
+    <span class="toast-icon">⚠️</span>
+    <span>被抓住了！剩余 <span id="respawnLives">3</span> 条命</span>
+  </div>
+
+  <!-- Victory Modal -->
+  <div id="victoryModal" class="modal hidden">
+    <div class="modal-content victory">
+      <h1 class="modal-title victory-title">🎉 恭喜通关！</h1>
+      <p class="modal-text">你拿到了幸运之星！</p>
+      <p class="modal-text">总金币: <span id="victoryScore">0</span></p>
+      <button id="victoryEndBtn" class="btn btn-primary">返回主页</button>
+    </div>
+  </div>
+
+  <script src="js/maze.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
