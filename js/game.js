@@ -20,7 +20,7 @@ class Game {
     this.playerMoveInterval = 120;
 
     this.guardMoveTimer = 0;
-    this.guardMoveInterval = 240; // 50% of player speed (120ms)
+    this.guardMoveInterval = 480; // 25% of player speed (120ms)
 
     this.enteringMaze = false;
     this.entryAnim = null;
